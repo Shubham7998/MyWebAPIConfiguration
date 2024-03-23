@@ -3,19 +3,21 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.8.34511.84
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyApp.API", "MyApp.API\MyApp.API.csproj", "{5032A314-E446-4807-B35D-6159702D81FD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyApp.API", "MyApp.API\MyApp.API.csproj", "{5032A314-E446-4807-B35D-6159702D81FD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyApp.Model", "MyApp.Model\MyApp.Model.csproj", "{DEDEB08A-9B49-4A4F-8980-5ED1488F9045}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyApp.Model", "MyApp.Model\MyApp.Model.csproj", "{DEDEB08A-9B49-4A4F-8980-5ED1488F9045}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyApp.Data", "MyApp.Data\MyApp.Data.csproj", "{CB87DBEB-8F14-4F4C-9E34-FC7BE34E9AFB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyApp.Data", "MyApp.Data\MyApp.Data.csproj", "{CB87DBEB-8F14-4F4C-9E34-FC7BE34E9AFB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyApp.IServices", "MyApp.IServices\MyApp.IServices.csproj", "{8599C032-CCA7-48CA-A755-E32A0803DB33}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyApp.IServices", "MyApp.IServices\MyApp.IServices.csproj", "{8599C032-CCA7-48CA-A755-E32A0803DB33}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyApp.Services", "MyApp.Services\MyApp.Services.csproj", "{30EC37BA-9324-42B0-8FC4-E11F34D8DE60}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyApp.Services", "MyApp.Services\MyApp.Services.csproj", "{30EC37BA-9324-42B0-8FC4-E11F34D8DE60}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyApp.Repositories", "MyApp.Repositories\MyApp.Repositories.csproj", "{64EF263F-35F0-4CA4-9374-EFA9CD1262B9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyApp.Repositories", "MyApp.Repositories\MyApp.Repositories.csproj", "{64EF263F-35F0-4CA4-9374-EFA9CD1262B9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyApp.IRepositories", "MyApp.IRepositories\MyApp.IRepositories.csproj", "{C4A6B0FF-DA76-4C97-962E-80231DD5A269}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyApp.IRepositories", "MyApp.IRepositories\MyApp.IRepositories.csproj", "{C4A6B0FF-DA76-4C97-962E-80231DD5A269}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyApp.DTO", "MyApp.DTO\MyApp.DTO.csproj", "{5A67B6E6-7D35-42BD-825D-8D781FA3EBC1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -51,6 +53,10 @@ Global
 		{C4A6B0FF-DA76-4C97-962E-80231DD5A269}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C4A6B0FF-DA76-4C97-962E-80231DD5A269}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C4A6B0FF-DA76-4C97-962E-80231DD5A269}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5A67B6E6-7D35-42BD-825D-8D781FA3EBC1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5A67B6E6-7D35-42BD-825D-8D781FA3EBC1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5A67B6E6-7D35-42BD-825D-8D781FA3EBC1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5A67B6E6-7D35-42BD-825D-8D781FA3EBC1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
