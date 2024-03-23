@@ -40,7 +40,14 @@ namespace MyApp.Repositories
 
         public async Task<T> GetByIdAsync(int id)
         {
-            return await _dbContext.Set<T>().FindAsync(id);
+            try
+            {
+                return await _dbContext.Set<T>().FindAsync(id);
+            }catch(Exception e)
+            {
+                var message = e.Message;
+                return null;
+            };
         }
 
 

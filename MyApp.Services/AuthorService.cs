@@ -20,11 +20,11 @@ namespace MyApp.Services
 
         public async Task<bool> DeleteAuthorAsync(int id)
         {
-            var isAuthorPresent = _authorRepository.GetByIdAsync(id);
+            var isAuthorPresent = await _authorRepository.GetByIdAsync(id);
 
             if(isAuthorPresent != null)
             {
-                return await _authorRepository.DeleteAsync(null);
+                return await _authorRepository.DeleteAsync(isAuthorPresent);
             }
             return false;
         }
