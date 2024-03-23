@@ -1,13 +1,14 @@
-﻿using MyApp.Model;
+﻿using MyApp.DTO;
+using MyApp.Model;
 
 namespace MyApp.IServices
 {
     public interface IBookService
     {
-        public Task<Book> CreateBookAsync(Book book);
-        public Task<Book> UpdateBookAsync(int id, Book book);
+        public Task<GetBookDto> CreateBookAsync(CreateBookDto bookDto);
+        public Task<GetBookDto> UpdateBookAsync(int id, UpdateBookDto bookDto);
         public Task<bool> DeleteBookAsync(int id);
-        public Task<Book> GetBookAsync(int id);
-        public Task<IEnumerable<Book>> GetBooksAsync();
+        public Task<GetBookDto> GetBookAsync(int id);
+        public Task<IEnumerable<GetBookDto>> GetBooksAsync();
     }
 }

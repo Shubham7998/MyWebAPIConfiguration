@@ -1,4 +1,5 @@
-﻿using MyApp.IRepositories;
+﻿using MyApp.DTO;
+using MyApp.IRepositories;
 using MyApp.IServices;
 using MyApp.Model;
 using System;
@@ -18,9 +19,16 @@ namespace MyApp.Services
             _bookRepository = bookRepository;
         }
 
-        public async Task<Book> CreateBookAsync(Book book)
+        public async Task<GetBookDto> CreateBookAsync(CreateBookDto bookDto)
         {
-            return await _bookRepository.CreateAsync(book);
+            var book =  await _bookRepository.CreateAsync(new Book()
+            {
+                AuthorId = bookDto.AuthorId,
+                BookDescription = bookDto.BookDescription,
+                Booktitle = bookDto.BookTitle
+            });
+
+            return new GetBookDto(book.BookId, book.Booktitle, book.BookDescription);
         }
 
         public async Task<bool> DeleteBookAsync(int id)
@@ -34,29 +42,34 @@ namespace MyApp.Services
             return false;
         }
 
-        public async Task<Book> GetBookAsync(int id)
+        public async Task<GetBookDto> GetBookAsync(int id)
         {
-            return await _bookRepository.GetByIdAsync(id);
+            var book =  await _bookRepository.GetByIdAsync(id);
+            return new GetBookDto(book.BookId, book.Booktitle, book.BookDescription);
         }
 
-        public async Task<IEnumerable<Book>> GetBooksAsync()
+        public async Task<IEnumerable<GetBookDto>> GetBooksAsync()
         {
-            return await _bookRepository.GetAllAsync();
+            var books =  await _bookRepository.GetAllAsync();
+
+            var bookDto = books.Select(book => new GetBookDto(book.BookId, book.Booktitle, book.BookDescription));
+
+            return bookDto;
         }
 
-        public async Task<Book> UpdateBookAsync(int id, Book book)
+        public async Task<GetBookDto> UpdateBookAsync(int id, UpdateBookDto bookDto)
         {
             var oldBook = await _bookRepository.GetByIdAsync(id);
 
             if(oldBook != null)
             {
-                oldBook.Author = book.Author;
-                oldBook.Booktitle = book.Booktitle;
-                oldBook.BookDescription = book.BookDescription;
+                oldBook.AuthorId = bookDto.AuthorId;
+                oldBook.Booktitle = bookDto.BookTitle;
+                oldBook.BookDescription = bookDto.BookDescription;
 
                 await _bookRepository.UpdateAsync(oldBook);
 
-                return oldBook;
+                return new GetBookDto(oldBook.BookId, oldBook.Booktitle, oldBook.BookDescription);
             }
             return null;
         }
