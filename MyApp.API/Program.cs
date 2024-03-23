@@ -16,6 +16,9 @@ builder.Services.AddDbContext<MyAppDbContext>(options => options.UseSqlServer(co
 builder.Services.AddScoped<IAuthorService, AuthorService>();
 builder.Services.AddScoped<IAuthorRepository, AuthorRepository>();
 
+builder.Services.AddScoped<IBookService, BookService>();
+builder.Services.AddScoped<IBookRepository, BookRepository>();
+
 builder.Services.AddControllers();
 var app = builder.Build();
 

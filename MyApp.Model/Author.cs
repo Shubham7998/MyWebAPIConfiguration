@@ -22,5 +22,7 @@ namespace MyApp.Model
         public string AuthorName { get; set; } = string.Empty;
         [Required (ErrorMessage ="Please enter author email.")]
         public string AuthorEmail { get; set; } = string.Empty;
+
+        public virtual ICollection<Book> Books { get; set; }
     }
 }
